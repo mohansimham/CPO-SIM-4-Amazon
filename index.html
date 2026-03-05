@@ -194,6 +194,13 @@ body{font-family:'Inter',sans-serif;background:var(--light);color:var(--text);li
 .learn-card .learn-example{background:var(--light);border-radius:10px;padding:16px;margin-top:14px;}
 .learn-card .learn-example h4{font-size:.82em;font-weight:700;color:var(--navy);margin-bottom:6px;}
 .learn-card .learn-example p{font-size:.85em;color:var(--muted);margin-bottom:0;font-style:italic;}
+.learn-card .learn-framework{background:#1a1a2e;border-radius:10px;padding:18px 20px;margin-top:14px;border-left:3px solid var(--accent);}
+.learn-card .learn-framework h4{font-size:.82em;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;}
+.learn-card .learn-framework ol{list-style:none;padding:0;margin:0;counter-reset:fw;}
+.learn-card .learn-framework ol li{counter-increment:fw;font-size:.84em;color:rgba(255,255,255,.75);padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06);line-height:1.5;}
+.learn-card .learn-framework ol li:last-child{border-bottom:none;}
+.learn-card .learn-framework ol li::before{content:counter(fw) ". ";color:var(--accent);font-weight:700;}
+.learn-card .learn-framework ol li span{color:rgba(255,255,255,.4);font-size:.9em;}
 .learn-nav{display:flex;justify-content:space-between;align-items:center;margin-top:24px;}
 .learn-dots{display:flex;gap:8px;}
 .learn-dot{width:10px;height:10px;border-radius:50%;background:var(--border);transition:background .2s;}
@@ -355,6 +362,17 @@ footer a{color:#556677;text-decoration:none;}
         <h4>Example</h4>
         <p>Amazon considers adding one-click reorder to Alexa. High reach (millions of Alexa users), high impact (reduces friction), medium confidence (voice commerce is unproven), low effort (existing infrastructure). RICE says: do it.</p>
       </div>
+      <div class="learn-framework">
+        <h4>RICE Scoring Template</h4>
+        <ol>
+          <li>Reach <span>— How many users will this impact per quarter? Use real data, not guesses.</span></li>
+          <li>Impact <span>— How much will it move the needle per user? 3=massive, 2=high, 1=medium, 0.5=low, 0.25=minimal.</span></li>
+          <li>Confidence <span>— How sure are you? 100%=hard data, 80%=good evidence, 50%=gut feel.</span></li>
+          <li>Effort <span>— Person-months of work. Include design, eng, QA, and launch.</span></li>
+          <li>Score = (R x I x C) / E <span>— Higher score = higher priority. Compare across features.</span></li>
+          <li>Sanity Check <span>— Does the ranking pass the smell test? If not, re-examine inputs.</span></li>
+        </ol>
+      </div>
       <div class="learn-nav">
         <span class="learn-counter">1 of 4</span>
         <div class="learn-dots"><span class="learn-dot active"></span><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot"></span></div>
@@ -374,6 +392,17 @@ footer a{color:#556677;text-decoration:none;}
       <div class="learn-example">
         <h4>Example</h4>
         <p>Amazon Prime launches same-day delivery in a new city. Must Have: delivery infrastructure, driver network. Should Have: real-time tracking. Could Have: preferred delivery windows. Won't Have: drone delivery (yet).</p>
+      </div>
+      <div class="learn-framework">
+        <h4>MoSCoW Classification Template</h4>
+        <ol>
+          <li>Must Have <span>— Without this, the product doesn't work. Non-negotiable for launch.</span></li>
+          <li>Should Have <span>— Important but not critical. Can ship without, but plan to add soon.</span></li>
+          <li>Could Have <span>— Nice-to-have. Include if time/budget allows. Cut first under pressure.</span></li>
+          <li>Won't Have (this time) <span>— Explicitly out of scope. Prevents scope creep. Document why.</span></li>
+          <li>Budget Rule <span>— Must = 60% of effort. Should = 20%. Could = 20%. Won't = 0%.</span></li>
+          <li>Stakeholder Alignment <span>— Get sign-off on classification BEFORE development starts.</span></li>
+        </ol>
       </div>
       <div class="learn-nav">
         <span class="learn-counter">2 of 4</span>
@@ -395,6 +424,17 @@ footer a{color:#556677;text-decoration:none;}
         <h4>Example</h4>
         <p>For Amazon Prime: free shipping is now a Basic (expected). Fast delivery speed is Performance (faster = happier). Prime Video was originally a Delighter (unexpected bonus) — but it's becoming a Basic as competitors bundle streaming.</p>
       </div>
+      <div class="learn-framework">
+        <h4>Kano Feature Classification</h4>
+        <ol>
+          <li>Must-Be (Basic) <span>— Expected features. Absence causes dissatisfaction. Presence doesn't delight.</span></li>
+          <li>Performance (Linear) <span>— More = better. Satisfaction scales proportionally with delivery.</span></li>
+          <li>Attractive (Delighters) <span>— Unexpected features that create disproportionate satisfaction.</span></li>
+          <li>Indifferent <span>— Users don't care either way. Don't waste effort here.</span></li>
+          <li>Reverse <span>— Features some users actively dislike. Adding them hurts satisfaction.</span></li>
+          <li>Survey Method <span>— Ask functional ("If feature exists?") + dysfunctional ("If it doesn't?") questions.</span></li>
+        </ol>
+      </div>
       <div class="learn-nav">
         <span class="learn-counter">3 of 4</span>
         <div class="learn-dots"><span class="learn-dot"></span><span class="learn-dot"></span><span class="learn-dot active"></span><span class="learn-dot"></span></div>
@@ -414,6 +454,17 @@ footer a{color:#556677;text-decoration:none;}
       <div class="learn-example">
         <h4>Example</h4>
         <p>Amazon tests adding "Frequently bought together" suggestions on product pages. Impact: 9 (drives cross-sell). Confidence: 8 (proven in retail). Ease: 7 (data exists). ICE = 504 — ship it fast.</p>
+      </div>
+      <div class="learn-framework">
+        <h4>ICE Scoring Template</h4>
+        <ol>
+          <li>Impact <span>— How much will this move the target metric? Score 1-10.</span></li>
+          <li>Confidence <span>— How sure are you about the impact estimate? Score 1-10.</span></li>
+          <li>Ease <span>— How easy is it to implement? 10=trivial, 1=massive effort.</span></li>
+          <li>Score = (I + C + E) / 3 <span>— Average the three. Rank all features by score.</span></li>
+          <li>When to Use ICE vs RICE <span>— ICE for speed (gut-level). RICE when you have real reach data.</span></li>
+          <li>Batch & Compare <span>— Score all candidates in one session. Relative scores matter more than absolute.</span></li>
+        </ol>
       </div>
       <div class="learn-nav">
         <span class="learn-counter">4 of 4</span>
